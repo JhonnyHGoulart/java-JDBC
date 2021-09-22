@@ -1,4 +1,4 @@
-package br.com.senai.javaejdbc.padroesfactory;
+package br.com.senai.javaejdbc.factorypattern;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

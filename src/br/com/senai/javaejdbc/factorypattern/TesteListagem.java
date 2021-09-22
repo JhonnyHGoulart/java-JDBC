@@ -1,7 +1,6 @@
-package br.com.senai.javaejdbc.padroesfactory;
+package br.com.senai.javaejdbc.factorypattern;
 
 import java.sql.*;
-import java.util.List;
 
 public class TesteListagem {
     public static void main(String[] args) throws SQLException {
