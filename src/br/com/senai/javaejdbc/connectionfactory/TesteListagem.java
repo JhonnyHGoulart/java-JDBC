@@ -9,8 +9,11 @@ public class TesteListagem {
 
         Connection connection = connectionFactory.recuperarConexao();
 
-        Statement stm = connection.createStatement();
-        stm.execute("SELECT ID, NOME, DESCRICAO FROM PRODUTO");
+//        Statement stm = connection.createStatement();
+//        stm.execute("SELECT ID, NOME, DESCRICAO FROM PRODUTO");
+
+        PreparedStatement stm = connection.prepareStatement("SELECT ID, NOME, DESCRICAO FROM PRODUTO");
+        stm.execute();
 
         ResultSet rst = stm.getResultSet();
 
