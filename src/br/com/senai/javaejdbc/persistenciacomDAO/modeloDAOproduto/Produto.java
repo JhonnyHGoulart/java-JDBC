@@ -1,4 +1,4 @@
-package br.com.senai.javaejdbc.persistenciacomDAO;
+package br.com.senai.javaejdbc.persistenciacomDAO.modeloDAOproduto;
 
 public class Produto {
     private Integer id;

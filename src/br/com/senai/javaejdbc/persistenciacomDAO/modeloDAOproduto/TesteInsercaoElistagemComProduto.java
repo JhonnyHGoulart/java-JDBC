@@ -1,4 +1,4 @@
-package br.com.senai.javaejdbc.persistenciacomDAO;
+package br.com.senai.javaejdbc.persistenciacomDAO.modeloDAOproduto;
 
 import br.com.senai.javaejdbc.connectionfactory.ConnectionFactory;
 
