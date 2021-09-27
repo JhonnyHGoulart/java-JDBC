@@ -13,7 +13,8 @@ public class TesteListagemDeCategorias {
 
         try (Connection connection = new ConnectionFactory().recuperarConexao()) {
             CategoriaDAO categoriaDAO = new CategoriaDAO(connection);
-            List<CategoriaProduto> listaDeCategorias = categoriaDAO.listar();
+
+            List<CategoriaProduto> listaDeCategorias = categoriaDAO.listarComProdutos();
             listaDeCategorias.stream()
                     .forEach(ct -> {
                         System.out.println(ct);
