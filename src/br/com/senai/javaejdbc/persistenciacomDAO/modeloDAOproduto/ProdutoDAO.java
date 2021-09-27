@@ -1,5 +1,7 @@
 package br.com.senai.javaejdbc.persistenciacomDAO.modeloDAOproduto;
 
+import br.com.senai.javaejdbc.persistenciacomDAO.modeloDAOcategorias.CategoriaProduto;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,4 +48,22 @@ public class ProdutoDAO {
         return produtos;
     }
 
+    public List<Produto> buscar(CategoriaProduto ct) throws SQLException {
+        List<Produto> produtos = new ArrayList<>();
+
+        String sql = "SELECT * FROM PRODUTO WHERE CATEGORIA_ID = ?";
+
+        try (PreparedStatement pstm = connection.prepareStatement(sql)) {
+            pstm.setInt(1, ct.getId());
+            pstm.execute();
+            try (ResultSet rst = pstm.getResultSet()) {
+                while (rst.next()) {
+                    Produto produto =
+                            new Produto(rst.getInt(1), rst.getString(2), rst.getString(3));
+                    produtos.add(produto);
+                }
+            }
+        }
+        return produtos;
+    }
 }
